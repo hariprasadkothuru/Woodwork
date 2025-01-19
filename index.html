@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naga satya Woodcraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adding Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Adding AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">
+            <img src="images/mandiram/1.jpg" alt="Logo" class="nav-logo">
+            <span class="logo-text">Naga satya</span>
+            <span class="logo-accent">Woodcraft</span>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#categories">Collections</a></li>
+            <li><a href="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Us</h2>
+            <div class="contact-person">
+                <h3>Kothuru Malleshwarao</h3>
+                <div class="contact-numbers">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Mobile: 9908721958</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Mobile: 9347722187</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this after the contact modal and before the hero section -->
+    <div id="galleryModal" class="modal gallery-modal">
+        <div class="modal-content gallery-content">
+            <span class="close-modal gallery-close">&times;</span>
+            <h2>Luxury Furniture Collection</h2>
+            <div class="gallery-grid">
+                <!-- Add all 20 images here -->
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="furniture1.jpg" alt="Luxury Furniture 1">
+                </div>
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="furniture2.jpg" alt="Luxury Furniture 2">
+                </div>
+                <!-- Add remaining images following the same pattern -->
+                <!-- ... -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="parallax-hero">
+        <div class="slider">
+            <div class="slide fade">
+                <img src="updatedhead4.jpg" alt="Elegant Woodcraft 1">
+            </div>
+            <div class="slide fade">
+                <img src="head2.jpg" alt="Elegant Woodcraft 2">
+            </div>
+            <div class="slide fade">
+                <img src="updatedhead6.jpg" alt="Elegant Woodcraft 3">
+            </div>
+            <div class="slide fade">
+                <img src="head4.jpg" alt="Elegant Woodcraft 4">
+            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            
+            <!-- Dots/circles -->
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <!-- Hero content outside slider -->
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Artistry in Wood</h1>
+            <p class="subtitle">Where nature meets craftsmanship</p>
+            <div class="scroll-indicator">
+                <span>Explore Our Collections</span>
+                <div class="mouse"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section id="categories">
+        <h2 class="section-title" data-aos="fade-up">Masterpiece Collections</h2>
+        <div class="category-grid">
+            <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-image">
+                    <img src="images/mandiram/12.jpg" alt="Luxury Furniture">
+                    <div class="overlay">
+                        <span class="category-tag">Premium</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Mandhiram</h3>
+                    <p>Bespoke pieces crafted for distinguished homes</p>
+                    <a href="mandhiram.html" class="explore-btn">
+                        <span>View Collection</span>
+                        <svg class="arrow" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image">
+                    <img src="images/pallaki/11.jpg" alt="Artistic Decor">
+                    <div class="overlay">
+                        <span class="category-tag">Artistic</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Pallaki</h3>
+                    <p>Artistic expressions in wood for modern spaces</p>
+                    <a href="pallaki.html" class="explore-btn">
+                        <span>View Collection</span>
+                        <svg class="arrow" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image">
+                    <img src="images/beds/17.jpg" alt="Outdoor Living">
+                    <div class="overlay">
+                        <span class="category-tag">Outdoor</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Beds</h3>
+                    <p>Nature-inspired designs for exterior spaces</p>
+                    <a href="beds.html" class="explore-btn">
+                        <span>View Collection</span>
+                        <svg class="arrow" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <!-- Add before closing body tag -->
+    <script>
+        // Slider functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
+                if (dots[i]) {  // Check if dot exists before removing class
+                    dots[i].classList.remove("active");
+                }
+            }
+            
+            slides[slideIndex-1].style.opacity = "1";
+            if (dots[slideIndex-1]) {  // Check if dot exists before adding class
+                dots[slideIndex-1].classList.add("active");
+            }
+        }
+
+        // Auto advance slides
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Modal functionality
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.querySelector(".contact-btn");
+        const closeBtn = document.querySelector(".close-modal");
+
+        contactBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add this to your existing JavaScript
+        const galleryModal = document.getElementById("galleryModal");
+        const luxuryGalleryBtn = document.getElementById("luxuryGalleryBtn");
+        const galleryClose = document.querySelector(".gallery-close");
+
+        luxuryGalleryBtn.onclick = function(e) {
+            e.preventDefault();
+            galleryModal.style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        galleryClose.onclick = function() {
+            galleryModal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Close gallery when clicking outside
+        galleryModal.onclick = function(event) {
+            if (event.target == galleryModal) {
+                galleryModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // Mobile menu functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

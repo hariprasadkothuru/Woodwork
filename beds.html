@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beds Collection - Elegant Woodcraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adding Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Adding AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav dark">
+        <div class="logo">
+            <span class="logo-text">Elegant</span>
+            <span class="logo-accent">Woodcraft</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#categories">Collections</a></li>
+            <li><a href="index.html#about">Craftsmanship</a></li>
+            <li><a href="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Header -->
+    <header class="gallery-header">
+        <h1>Beds Collection</h1>
+        <p>Explore our exclusive bed designs</p>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="full-gallery">
+        <div class="gallery-grid">
+            <!-- 20 Beds images -->
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/1.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/2.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/3.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/4.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/5.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/6.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/7.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/8.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/9.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/10.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/11.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/12.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/13.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/14.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/15.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/16.jpg">
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="images/beds/17.jpg">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Full Screen Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-image">&times;</span>
+        <img class="modal-image-content" id="fullImage">
+        <a class="prev-image" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next-image" onclick="changeImage(1)">&#10095;</a>
+    </div>
+
+    <!-- Add AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Image Modal functionality
+        const imageModal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+        const closeImage = document.querySelector(".close-image");
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        let currentImageIndex = 0;
+
+        // Add click event to all gallery images
+        galleryImages.forEach((img, index) => {
+            img.onclick = function() {
+                imageModal.style.display = "block";
+                modalImg.src = this.src;
+                currentImageIndex = index;
+                document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+            }
+        });
+
+        // Close modal
+        closeImage.onclick = function() {
+            imageModal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Close modal when clicking outside the image
+        imageModal.onclick = function(event) {
+            if (event.target === imageModal) {
+                imageModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // Change image function
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+            modalImg.src = galleryImages[currentImageIndex].src;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (imageModal.style.display === "block") {
+                if (e.key === "ArrowLeft") {
+                    changeImage(-1);
+                }
+                else if (e.key === "ArrowRight") {
+                    changeImage(1);
+                }
+                else if (e.key === "Escape") {
+                    imageModal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

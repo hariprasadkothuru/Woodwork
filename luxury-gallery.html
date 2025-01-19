@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Furniture Collection - Elegant Woodcraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adding Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Adding AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="glass-nav dark">
+        <div class="logo">
+            <span class="logo-text">Elegant</span>
+            <span class="logo-accent">Woodcraft</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#categories">Collections</a></li>
+            <li><a href="index.html#about">Craftsmanship</a></li>
+            <li><a href="#contact" class="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Header -->
+    <header class="gallery-header">
+        <h1>Luxury Furniture Collection</h1>
+        <p>Explore our handcrafted masterpieces</p>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="full-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="1.jpg" alt="Luxury Furniture 1">
+                <div class="item-details">
+                    <h3>Classic Wooden Chair</h3>
+                    <p>Hand-carved elegance</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <img src="2.jpg" alt="Luxury Furniture 2">
+                <div class="item-details">
+                    <h3>Dining Table Set</h3>
+                    <p>Premium craftsmanship</p>
+                </div>
+            </div>
+            <!-- Add all 20 images following this pattern -->
+        </div>
+    </section>
+
+    <!-- Add AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html> 
